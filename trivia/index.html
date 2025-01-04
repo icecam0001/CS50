@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add paragraph for feedback right after the buttons
+                const questionDiv = document.querySelector('.section');
+                const feedbackP = document.createElement('p');
+                feedbackP.id = 'feedback';
+                questionDiv.appendChild(feedbackP);
+
+                // Handle correct answer
+                document.querySelector('#correct').addEventListener('click', function() {
+                    this.style.backgroundColor = 'green';
+                    document.querySelector('#feedback').textContent = 'Correct!';
+                    document.querySelector('#feedback').style.color = 'green';
+                });
+
+                // Handle incorrect answers
+                const incorrectButtons = document.querySelectorAll('[id^="incorrect"]');
+                incorrectButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        this.style.backgroundColor = 'red';
+                        document.querySelector('#feedback').textContent = 'Incorrect. Try again!';
+                        document.querySelector('#feedback').style.color = 'red';
+                    });
+                });
+                let input = document.querySelector('#king');
+                let form = document.querySelector('form');
+                form.addEventListener('submit', function() {
+                    if (input.value == 'Cameron' ) {
+                        event.preventDefault();
+                        this.style.backgroundColor = 'green';
+
+                    } else {
+                        event.preventDefault();
+                        this.style.backgroundColor = 'red';
+                    }
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the capital of somalia</h3>
+                <button id="incorrectone">Washington DC</button>
+                <button id="incorrectthree">America</button>
+                <button id="incorrecttwo">King cameron</button>
+                <button id="correct">Mogadishu</button>
+                <!-- Feedback will appear here -->
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Who is the king</h3>
+                <form>
+                    <input type="text" id ='king'>
+                    </form>
+            </div>
+        </div>
+    </body>
+</html>
