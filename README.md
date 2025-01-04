@@ -81,4 +81,4 @@ CS50 is Harvard's intro to computer science course. It covers everything from ba
 - Feel free to check out the code but remember to follow CS50's guidelines
 
 ## Contact
-If you have questions about any of the solutions, feel free to reach out!
+If you have questions about any of the solutions, feel free email me! (kupermancameron@gmail.com)
